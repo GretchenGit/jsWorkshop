@@ -35,17 +35,23 @@
         console.log(ausgabe);
     };
 
+    function _logCalls() {
+        log('zahl', zahl);
+        log('satz', satz);
+        log('wahrheit', wahrheit);
+        log('meinArray', meinArray);
+        log('meinObject', meinObject.objectkey1);
+        log('eineFunktion', eineFunktion);
+    }
+
+    function _main() {
+        // Zugriff aus globalen Kontext ermöglichen
+        _logCalls();
+        window.Autark = {} || window.Autark;
+        window.Autark.log = log;
+    }
 
     // CONTROL
-    log('zahl', zahl);
-    log('satz', satz);
-    log('wahrheit', wahrheit);
-    log('meinArray', meinArray);
-    log('meinObject', meinObject.objectkey1);
-    log('eineFunktion', eineFunktion);
-
-    // Zugriff aus globalen Kontext ermöglichen
-    window.Autark = {} || window.Autark;
-    window.Autark.log = log();
+    _main();
 
 })()
