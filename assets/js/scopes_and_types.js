@@ -1,6 +1,6 @@
-/** 
+/** Scopes And Types
  *
- *  @desc Erste Übung Javascriptkurs
+ * @desc Erste Übung Javascriptkurs
  *
  * @package Webapplication
  * @module scopes_and_types
@@ -14,7 +14,7 @@
 !(function () {
     'use strict';
     // DECLARATION
-    let count = 42,
+    let number = 42,
         sentence = 'Hallo Welt',
         truth = true,
         myArray = ['1', '2', '3', 1, 2, 3],
@@ -26,16 +26,16 @@
     // FUNCTION
     /**
      * Die Funktion log schreibt den Variablennamen, den Typ und den Wert in die Konsole
-     * @param {*} elementName: string
+     * @param {string} elementName 
      * @param {*} element 
      */
     function log(elementName, element) {
-        let ausgabe = elementName + ' { ' + typeof (element) + ' }: ' + element
-        console.log(ausgabe);
+        let output = elementName + ' { ' + typeof (element) + ' }: ' + element
+        console.log(output);
     };
 
     function _logCalls() {
-        log('zahl', count);
+        log('zahl', number);
         log('satz', sentence);
         log('wahrheit', truth);
         log('meinArray', myArray);
@@ -44,13 +44,18 @@
     }
 
     function _main() {
-        // Zugriff aus globalen Kontext ermöglichen
+        // the modules own main routine
         _logCalls();
+
+        // enable a global accessability from window
+        // ! not really neccessary for your example, but nice :-)
         window.Autark = {} || window.Autark;
         window.Autark.log = log;
     }
 
     // CONTROL
-    window.onload(_main());
+    window.onload = function () {
+        _main();
+    };
 
 })()
