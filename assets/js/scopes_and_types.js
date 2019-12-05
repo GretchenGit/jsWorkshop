@@ -1,12 +1,12 @@
 /** Scopes And Types
  *
- * @desc Erste Übung Javascriptkurs
+ * @desc Second Excercise Javascriptcourse
  *
  * @package Webapplication
  * @module scopes_and_types
  * @author Silke <silke.rappelt@autark.com>
  * @version v2.0.0
- * @since 2019-11-28
+ * @since 2019-12-05
  * @license MIT {https://opensource.org/licenses/MIT}
  * @copyright (c) 2019 Silke Rappelt, Cassel
  */
@@ -59,14 +59,10 @@
 
     }
 
-    /**
-     * this function is without function right now
-     */
-    function _addNavigation() {}
-
 
     /**
      * _getType gets type of checkedObject including arrays
+     * @param {*} checkedObject 
      */
     function _getType(checkedObject) {
         try {
@@ -76,6 +72,13 @@
             console.log(error);
         }
     }
+    
+    
+    /**
+     * this function is without function right now
+     */
+    function _addNavigation() {}
+    
 
     /**
      * encapsulates all functions from globally access
