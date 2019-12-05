@@ -14,7 +14,8 @@
 !(function () {
     'use strict';
 
-    // DECLARATION
+    // DECLARATIONS
+
     let number = 42,
         sentence = 'Hallo Welt',
         truth = true,
@@ -24,13 +25,14 @@
         },
         aFunction = function () {};
 
-    // FUNCTION
+    // FUNCTIONS
+
     /**
-     * Die Funktion log schreibt den Variablennamen, den Typ und den Wert in die Konsole
+     * _log logs name, type and value of a variable into console
      * @param {string} elementName 
      * @param {*} element 
      */
-    function log(elementName, element) {
+    function _log(elementName, element) {
         try {
             let output = elementName + ' { ' + _getType(element) + ' }: ' + element;
             console.log(output);
@@ -39,17 +41,18 @@
         }
     };
 
+
     /**
      * provides the objects
      */
     function _logCalls() {
         try {
-            log('zahl', number);
-            log('satz', sentence);
-            log('wahrheit', truth);
-            log('meinArray', myArray);
-            log('meinObject', myObject.objectkey1);
-            log('eineFunktion', aFunction);
+            _log('zahl', number);
+            _log('satz', sentence);
+            _log('wahrheit', truth);
+            _log('meinArray', myArray);
+            _log('meinObject', myObject.objectkey1);
+            _log('eineFunktion', aFunction);
         } catch (error) {
             console.log(error);
         }
@@ -63,7 +66,7 @@
 
 
     /**
-     * this function gets type of checkedObject including arrays
+     * _getType gets type of checkedObject including arrays
      */
     function _getType(checkedObject) {
         try {
@@ -74,6 +77,9 @@
         }
     }
 
+    /**
+     * encapsulates all functions from globally access
+     */
     function _main() {
         try {
             // the modules own main routine
@@ -81,7 +87,7 @@
 
             // enable a global accessability from window
             window.tools = {} || window.tools;
-            window.tools.log = log;
+            window.tools._log = _log;
             window.tools._addNavigation = _addNavigation;
         } catch (error) {
             console.log(error);
@@ -89,7 +95,8 @@
 
     }
 
-    // CONTROL
+    // CONTROLS
+
     window.onload = function () {
         _main();
     };
