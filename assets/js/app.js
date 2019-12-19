@@ -16,7 +16,8 @@
     // DECLARATION
     // FUNCTIONS
     // CONTROL
-    /** Test */
+
+    /** addNavigation to DOM */
     window.tools.addNavigation();
 
 })()

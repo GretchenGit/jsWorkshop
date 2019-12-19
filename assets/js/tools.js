@@ -44,8 +44,6 @@
                 let li = document.createElement('li');
                 let a = document.createElement('a');
                 let text = document.createTextNode(navArray[i].text)
-                console.log('array link', navArray[i].link)
-                console.log('array text', navArray[i].text)
                 a.setAttribute('href', navArray[i].link);
                 a.appendChild(text);
                 li.appendChild(a);
