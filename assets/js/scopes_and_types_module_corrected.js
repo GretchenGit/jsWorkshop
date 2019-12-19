@@ -15,6 +15,7 @@
     'use strict';
     // - - - - - - - - - -
     // Module declarations
+
     // - - - - - - - - - -
     // none do far
 
@@ -107,7 +108,7 @@
     function _main() {
         try {
             // the modules own main routine
-            _logCalls();
+            //_logCalls();
 
             // enable a global accessability from window
             window.tools = {} || window.tools;
@@ -137,12 +138,12 @@
 // ! Das tools Module wird i.d.R. ja von anderen Programmen verwendet
 window.onload = function () {
 
-    window.tools.log("eineNummer", aNumber);
+    window.tools._log("eineNummer", aNumber);
 
     // ! window kann man auch weglassen
-    tools.log("einText", aText);
-    tools.log("einBool", aBool);
-    tools.log("einArray", anArray);
-    tools.log("einObjekt", anObject.objektKey);
-    tools.log("eineFunktion", aFunction);
+    tools._log("einText", aText);
+    tools._log("einBool", aBool);
+    tools._log("einArray", anArray);
+    tools._log("einObjekt", anObject.objektKey);
+    tools._log("eineFunktion", aFunction);
 }
